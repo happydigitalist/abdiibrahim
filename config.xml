@@ -16,6 +16,6 @@
     <author href="https://build.phonegap.com" email="support@phonegap.com">
         Hardeep Shoker 
     </author>
-    <preference name="orientation" value="landscape" />
+    <preference name="orientation" value="portrait" />
 
 </widget>
