@@ -1,0 +1,130 @@
+
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="tr" class="noie"> <!--<![endif]-->
+<head>
+<title>İŞTEBİZ</title>
+<meta name="viewport" content="width=1200, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<link rel="icon" type="image/png" href="pics/favicon.png" />
+<link type="text/css" rel="stylesheet" href="css/jquery.ui.css"></link>
+<link type="text/css" rel="stylesheet" href="css/default.css"></link>
+<script type="text/javascript" src="extras/all.js"></script>
+<script type="text/javascript" src="lib/hash.js"></script>
+<script type="text/javascript" src="lib/turn.min.js"></script>
+<script type="text/javascript" src="lib/zoom.min.js"></script>
+<script type="text/javascript" src="lib/bookshelf.js"></script>
+<script src="extras/jquery.tools.min.js"></script>
+<activity android:name=".yourActivity" android:screenOrientation="landscape"/>
+
+</head>
+<body>
+
+<div class="splash">
+	<div class="center">
+	<div class="orient">En İyi Görünüm İçin Lülten Cihazı Yan Çeviriniz</div>
+	<div class="details">
+		<img src="pics/logo.png" width="80%">
+	</div>
+	<div class="bookshelf">
+		<div class="shelf">
+			<div class="row-1">
+				<div class="loc">
+					<div> <div class="thumbbos"></div> </div>
+					<div> <div class="sample thumb2" sample="sekiz" title="Sayı 8"></div> <div class="sayi">SAYI 8</div> </div>
+					<div> <div class="thumbbos"></div> </div>
+				</div>
+			</div>
+			<div class="row-2">
+				<div class="loc">
+					<div> <div class="thumbbos"></div> </div>
+					<div> <div class="sample thumb1" sample="yedi" title="Sayı 7"></div> <div class="sayi">SAYI 7</div></div>
+					<div> <div class="thumbbos"></div> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- Samples-->
+	<div class="samples">
+		
+		<div id="book-wrapper">
+			<div id="book-zoom"></div>
+		</div>
+		<div id="slider-bar" class="turnjs-slider">
+			<div id="slider"></div>
+		</div>
+<div class="bar">
+		</div>
+	</div>
+
+<!-- End samples -->
+
+</div>
+<div class="gradient"></div>
+	<a class="icon quit"></a>
+</div>
+
+<footer>
+	&copy; 2011-2013 Abdi İbrahim İlaç Sanayi ve Tic A.Ş.<br>
+</footer>
+
+<script type="text/javascript">
+
+//1953 360
+
+yepnope({
+	test : Modernizr.csstransforms,
+	nope : ['lib/turn.html4.min.js', 'css/jquery.ui.html4.css']
+});
+
+$('#sample-viewer a').click(function() {
+	$(this).hide();
+	yepnope({
+		test : Modernizr.csstransforms,
+		load: ['samples/basic/js/basic.js', 'samples/basic/css/basic.css'],
+		nope: 'samples/basic/css/basic.html4.css?'+Math.round(Math.random()*100)
+	});
+});
+ // function doOnOrientationChange()
+ //  {
+ //    switch(window.orientation) 
+ //    {  
+ //      case -90:
+ //      case 90:
+ //        alert('landscape');
+ //        flipbook.turn({display: 'double'});
+ //        break; 
+ //      default:
+ //        alert('portrait');
+ //        flipbook.turn({display: 'single'});
+ //        break; 
+ //    }
+ //  }
+
+ //  window.addEventListener('orientationchange', doOnOrientationChange);
+
+ //  // Initial execution if needed
+ //  doOnOrientationChange();
+</script>
+<script>
+$(function() {
+// initialize tooltip
+$(".sample[title]").tooltip({
+
+   // tweak the position
+   offset: [10, 2],
+
+   // use the "slide" effect
+   effect: 'slide'
+
+// add dynamic plugin with optional configuration for bottom edge
+});
+});
+</script>
+</body>
+</html>
