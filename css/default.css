@@ -127,7 +127,8 @@ a:hover{
 }
 
 .bookshelf .shelf .row-1:after,
-.bookshelf .shelf .row-2:after{
+.bookshelf .shelf .row-2:after,
+.bookshelf .shelf .row-3:after{
 	background:url(../pics/wall-bookshelf.png);
 	background-size:100%;
 	background-repeat: no-repeat;
@@ -147,10 +148,20 @@ a:hover{
 	margin-left:33px;
 }
 
+.bookshelf .shelf .row-3:after{
+	height:216px;
+}
+.bookshelf .shelf .row-3{
+	position:relative;
+	margin-top:20px;
+	height:164px;
+	width:446px;
+	margin-left:33px;
+}
+
 .bookshelf .shelf .row-2:after{
 	height:216px;
 }
-
 .bookshelf .shelf .loc{
 	position:absolute;
 	bottom:0;
