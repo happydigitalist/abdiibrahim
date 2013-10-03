@@ -14,7 +14,7 @@
     </description>
 
     <author href="http://www.happydigital.com.tr" email="support@phonegap.com">
-        Kaan Vurgun
+        Happy Digital
     </author>
     <preference name="orientation" value="portrait" />
     <access origin="*" subdomains="true" />
