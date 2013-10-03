@@ -38,7 +38,6 @@ li{
 	width:100%;
 	height:100%;
 	min-height:400px; 
-	overflow:hidden;
 	position:relative;
 	background:url(../pics/splash-bg.jpg) bottom left repeat-x;
 	
@@ -67,7 +66,7 @@ li{
 }
 
 .splash .center{
-	width:1000px;
+	width:800px;
 	/*height:700px;*/
 	margin:auto;
 	position:relative;
@@ -75,7 +74,7 @@ li{
 }
 
 .splash .details{
-	width: 50%;
+	width: 100%;
 	float:left;
 	margin-top:150px;
 	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
@@ -182,20 +181,20 @@ li{
 
 .bookshelf{
 	float:right;
-	margin-top:20px;
-	width: 50%;
+	margin-top:40px;
+	width: 100%;
 }
 
 .bookshelf .shelf{
 	/*background:url(../pics/bookshelf.gif);
 	background-size:100%;*/
-	width:426px;
+	width:526px;
 	height:440px;
 }
 
 .bookshelf .shelf .row-1{
 	position:relative;
-	width:360px;
+	width:526px;
 	height:158px;
 	margin-left:33px;
 
@@ -207,7 +206,7 @@ li{
 	background-size:100%;
 	background-repeat: no-repeat;
 	background-position:bottom left;
-	width:426px;
+	width:526px;
 	height:210px;
 	display:block;
 	content:"";
@@ -479,9 +478,7 @@ background: #fff;
 	-ms-transition:opacity 1s;
 	transition:opacity 1s;
 }
-.splash .icon.quit{
-	display: none;
-}
+
 .splash.preview.show-samples .icon.quit{
 	display: block;
 	background-position:0 0;
@@ -540,8 +537,4 @@ color: #fff;
 text-shadow: 1px 1px 3px #000;
 filter: dropshadow(color=#000, offx=1, offy=1);
 }
-@media screen and (orientation:portrait), screen and (max-width: 320px) {
-.splash .details {width: 100%;}
-.bookshelf {width: 100%;}
 .bookshelf .shelf {margin: 0 auto;}
-}
