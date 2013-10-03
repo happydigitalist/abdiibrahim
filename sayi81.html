@@ -1,0 +1,147 @@
+
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' 'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+  <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png"/>
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1"
+    />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>A Place So Foreign and Eight More</title>
+
+    <script type="text/javascript" src="/static/scripts/monocore.js"></script>
+    <script type="text/javascript" src="/static/scripts/monoctrl.js"></script>
+    <script type="text/javascript" src="/static/scripts/newbook.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/static/styles/monocore.css" />
+    <link rel="stylesheet" type="text/css" href="/static/styles/monoctrl.css" />
+    <link rel="stylesheet" type="text/css" href="/static/styles/newbook.css" />
+
+    <script type="text/javascript">
+      (function () {
+        // An AJAX-based bookdata object
+        var bookData = {
+          getComponents: function () {
+            return [
+              '/books/a-place-so-foreign-and-eight-more/0/raw/', '/books/a-place-so-foreign-and-eight-more/1/raw/', '/books/a-place-so-foreign-and-eight-more/2/raw/', '/books/a-place-so-foreign-and-eight-more/3/raw/', '/books/a-place-so-foreign-and-eight-more/4/raw/', '/books/a-place-so-foreign-and-eight-more/5/raw/', '/books/a-place-so-foreign-and-eight-more/6/raw/', '/books/a-place-so-foreign-and-eight-more/7/raw/', '/books/a-place-so-foreign-and-eight-more/8/raw/'
+            ];
+          },
+          getContents: function () {
+            return [
+              {
+  title: "Craphound",
+  src: "/books/a-place-so-foreign-and-eight-more/1/raw/"
+},
+{
+  title: "A Place So Foreign",
+  src: "/books/a-place-so-foreign-and-eight-more/2/raw/"
+},
+{
+  title: "Return to Pleasure Island",
+  src: "/books/a-place-so-foreign-and-eight-more/3/raw/"
+},
+{
+  title: "Shadow of the Mothaship",
+  src: "/books/a-place-so-foreign-and-eight-more/4/raw/"
+},
+{
+  title: "Home Again, Home Again",
+  src: "/books/a-place-so-foreign-and-eight-more/5/raw/"
+},
+{
+  title: "The Superman and the Bugout",
+  src: "/books/a-place-so-foreign-and-eight-more/6/raw/"
+},
+{
+  title: "A note about this story",
+  src: "/books/a-place-so-foreign-and-eight-more/7/raw/"
+},
+{
+  title: "License",
+  src: "/books/a-place-so-foreign-and-eight-more/8/raw/"
+}
+            ];
+          },
+          getComponent: function (componentId) {
+            return this.getViaAjax(componentId);
+          },
+          getMetaData: function(key) {
+            return {
+              title: "A Place So Foreign",
+              creator: "Cory Doctorow"
+            }[key];
+          },
+          getViaAjax: function (path) {
+            var ajReq = new XMLHttpRequest();
+            ajReq.open("GET", path, false);
+            ajReq.send(null);
+            return ajReq.responseText;
+          }
+        }
+
+
+        // Initialize the reader element.
+        function init() {
+          var bkTitle = bookData.getMetaData('title');
+          window.placeSaver = new Monocle.Controls.PlaceSaver(bkTitle);
+          var options = {
+            place: placeSaver.savedPlace(),
+            stylesheet: 'body { font-family: Helvetica Neue, Helvetica, sans-serif; font-size: 85%; line-height: 130%; } p.divider { text-align: center; font-size: 150%; margin: 1em 0; } .cover h1 { font-size: 2.5em; line-height: 1.4em; } .cover h2 { font-weight: normal; }'
+          }
+          window.reader = Monocle.Reader('reader', bookData, options, prep);
+        }
+
+
+        function prep(rdr) {
+          rdr.addControl(placeSaver, 'invisible');
+          newBookSpinner(rdr);
+          newBookTitle(rdr);
+          newBookContents(rdr);
+          newBookPageNumber(rdr);
+          Monocle.Events.listen(window, 'resize', onResize);
+        }
+
+
+        function onResize() {
+          window.reader.resized();
+        }
+
+
+        Monocle.Events.listen(window, 'load', init);
+      })();
+    </script>
+
+  </head>
+
+  <body>
+
+    <div id="reader"></div>
+
+    <script type="text/javascript">
+  var gaJsHost = (
+    ("https:" == document.location.protocol) ? "https://ssl." : "http://www."
+  );
+  document.write(
+    unescape(
+      "%3Cscript src='" +
+      gaJsHost +
+      "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"
+    )
+  );
+</script>
+
+<script type="text/javascript">
+  try {
+    var pageTracker = _gat._getTracker("UA-5980175-4");
+    pageTracker._trackPageview();
+  } catch(err) {}
+</script>
+
+
+  </body>
+
+</html>

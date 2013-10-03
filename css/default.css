@@ -25,15 +25,6 @@ a:hover{
 	text-decoration:underline;
 }
 
-p{
-	line-height:22px;
-	margin:20px 0;
-}
-
-li{
-	list-style:none;
-}
-
 .splash{
 	width:100%;
 	height:100%;
@@ -48,22 +39,6 @@ li{
 	transition:height 1s;
 }
 
-.splash .gradient{
-	position:absolute;
-	bottom:-100px;
-	left:0;
-	width:100%;
-	height:100px;
-	z-index:1000;
-}
-
-.no-transition{
-	-webkit-transition:none;
-	-moz-transition:none;
-	-ms-transition:none;
-	-o-transition:none;
-	transition:none;
-}
 
 .splash .center{
 	width:800px;
@@ -80,43 +55,10 @@ li{
 	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
-.details li{
-	font:23px 'Helvetica Neue', helvetica, arial;
-	list-style:none;
-	line-height:30px;
-	color:#333;
-
-	-webkit-text-fill-color: #333;
-	-webkit-text-stroke-color: white;
-	-webkit-text-stroke-width: 0.0005em;
-}
-
-.details .options{
-	margin:10px 0;
-	float:left;
-}
-
-.details .options p{
-	margin:10px 0;
-}
-
-.details .options a{
-	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight:200;
-	font-size:14px;
-	color:#334C13;
-	text-shadow:0 1px 1px white;
-	text-decoration:none;
-	margin-left:5px;
-}
-
-.details .options a:hover{
-	text-decoration:underline;
-}
-
-.details .production{
-	margin-top:40px;
-	margin-bottom:20px;
+.details img{
+	margin: 0 auto;
+	width: 80%;
+	display: block;
 }
 
 .bookshelf{
@@ -125,22 +67,6 @@ li{
 	-o-transition:all 1s;
 	-ms-transition:all 1s;
 	transition:all 1s;
-}
-
-.preview .no-transition{
-	-webkit-transition:none !important;
-	-moz-transition:none !important;
-	-o-transition:none !important;
-	-ms-transition:none !important;
-	transition:none !important;
-}
-
-.preview .no-transform{
-	-webkit-transform:scale3d(1, 1, 1) !important;
-	-moz-transform:scale3d(1, 1, 1) !important;
-	-o-transform:scale3d(1, 1, 1) !important;
-	-ms-transform:scale3d(1, 1, 1) !important;
-	transform:scale3d(1, 1, 1) !important;
 }
 
 .preview .bookshelf{
@@ -194,7 +120,7 @@ li{
 
 .bookshelf .shelf .row-1{
 	position:relative;
-	width:526px;
+	width:446px;
 	height:158px;
 	margin-left:33px;
 
@@ -217,7 +143,7 @@ li{
 	position:relative;
 	margin-top:20px;
 	height:164px;
-	width:360px;
+	width:446px;
 	margin-left:33px;
 }
 
