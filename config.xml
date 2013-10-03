@@ -17,5 +17,5 @@
         Kaan Vurgun
     </author>
     <preference name="orientation" value="portrait" />
-
+    <access origin="*" subdomains="true" />
 </widget>
