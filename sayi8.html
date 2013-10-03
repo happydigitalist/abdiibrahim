@@ -8,22 +8,121 @@
     <link rel="apple-touch-icon" href="static/images/apple-touch-icon.png"/>
     <meta
       name="viewport"
-      content="width=device-width,initial-scale=1,maximum-scale=2"
+      content="width=device-width,initial-scale=1,maximum-scale=1"
     />
-    <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8"/>
-    <title>The Velveteen Rabbit</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>A Place So Foreign and Eight More</title>
 
     <script type="text/javascript" src="static/scripts/monocore.js"></script>
-    <link rel="stylesheet" href="static/styles/monocore.css" />
+    <script type="text/javascript" src="static/scripts/monoctrl.js"></script>
+    <script type="text/javascript" src="static/scripts/newbook.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="static/styles/monocore.css" />
+    <link rel="stylesheet" type="text/css" href="static/styles/monoctrl.css" />
+    <link rel="stylesheet" type="text/css" href="static/styles/newbook.css" />
 
     <script type="text/javascript">
       (function () {
+        // An AJAX-based bookdata object
+        var bookData = {
+          getComponents: function () {
+            return [
+              'dergi/sayi8/0/',
+              'dergi/sayi8/1/',
+              'dergi/sayi8/2/',
+              'dergi/sayi8/3/',
+              'dergi/sayi8/4/',
+              'dergi/sayi8/5/',
+              'dergi/sayi8/6/',
+              'dergi/sayi8/7/',
+              'dergi/sayi8/8/'
+            ];
+          },
+          getContents: function () {
+            return [
+{
+  title: "Giriş",
+  src: "dergi/sayi8/0/"
+},
+{
+  title: "Haber 1",
+  src: "dergi/sayi8/1/"
+},
+{
+  title: "Haber 2",
+  src: "dergi/sayi8/2/"
+},
+{
+  title: "Haber 3",
+  src: "dergi/sayi8/3/"
+},
+{
+  title: "Haber 4",
+  src: "dergi/sayi8/4/"
+},
+{
+  title: "Haber 5",
+  src: "dergi/sayi8/5/"
+},
+{
+  title: "Haber 6",
+  src: "dergi/sayi8/6/"
+},
+{
+  title: "Haber 7",
+  src: "dergi/sayi8/7/"
+},
+{
+  title: "Haber 8",
+  src: "dergi/sayi8/8/"
+}
+            ];
+          },
+          getComponent: function (componentId) {
+            return this.getViaAjax(componentId);
+          },
+          getMetaData: function(key) {
+            return {
+              title: "Sayı 8",
+              creator: "Abdiİbrahim"
+            }[key];
+          },
+          getViaAjax: function (path) {
+            var ajReq = new XMLHttpRequest();
+            ajReq.open("GET", path, false);
+            ajReq.send(null);
+            return ajReq.responseText;
+          }
+        }
+
+
+        // Initialize the reader element.
         function init() {
-          window.reader = Monocle.Reader('reader', null, {}, prep);
+          var bkTitle = bookData.getMetaData('title');
+          window.placeSaver = new Monocle.Controls.PlaceSaver(bkTitle);
+          var options = {
+            place: placeSaver.savedPlace(),
+            stylesheet: 'body { font-family: Helvetica Neue, Helvetica, sans-serif; font-size: 85%; line-height: 130%; } p.divider { text-align: center; font-size: 150%; margin: 1em 0; } .cover h1 { font-size: 2.5em; line-height: 1.4em; } .cover h2 { font-weight: normal; }'
+          }
+          window.reader = Monocle.Reader('reader', bookData, options, prep);
         }
+
+
         function prep(rdr) {
-          document.getElementById('reader').style.visibility = "visible";
+          rdr.addControl(placeSaver, 'invisible');
+          newBookSpinner(rdr);
+          newBookTitle(rdr);
+          newBookContents(rdr);
+          newBookPageNumber(rdr);
+          Monocle.Events.listen(window, 'resize', onResize);
         }
+
+
+        function onResize() {
+          window.reader.resized();
+        }
+
+
         Monocle.Events.listen(window, 'load', init);
       })();
     </script>
@@ -32,63 +131,7 @@
 
   <body>
 
-    <div id="reader">
-
-      </style>
-      <img src="static/images/1.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/2.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/3.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/4.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/5.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/6.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/7.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/8.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/9.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/10.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/11.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/12.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/13.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/14.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/15.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/16.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/17.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/18.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/19.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/20.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/21.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/22.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/23.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/24.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/25.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/26.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/27.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/28.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/29.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/30.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/31.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/32.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/33.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/34.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/35.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/36.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/37.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/38.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/39.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/40.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/41.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/42.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/43.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/44.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/45.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/46.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/47.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/48.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/49.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/50.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/51.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-      <img src="static/images/52.jpg" alt="The Velveteen Rabbit, by Margery Williams" />
-
-    </div>
+    <div id="reader"></div>
 
   </body>
 
