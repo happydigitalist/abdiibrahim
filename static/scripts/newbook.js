@@ -49,7 +49,22 @@ function newBookContents(reader) {
   reader.addControl(tocButton);
   return tocButton;
 }
-
+function newBackContents(reader) {
+  var bacButton = {}
+  bacButton.createControlElements = function () {
+    var btn2 = document.createElement('div');
+    btn2.className = "bacButton";
+    Monocle.Events.listen(
+      btn2,
+      typeof Touch == "object" ? "touchstart" : "mousedown",
+      function (evt) {
+      }
+    );
+    return btn2;
+  }
+  reader.addControl(bacButton);
+  return bacButton;
+}
 
 function newBookTitle(reader) {
   var bookTitle = {}
