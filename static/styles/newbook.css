@@ -35,8 +35,8 @@ h1 {
   position: absolute;
   bottom: 0;
   height: 20px;
-  left: 0;
-  right: 40px;
+  left: 40px;
+  right: 0;
   cursor: system;
   background: #282626;
   color: #DDD;
@@ -49,10 +49,10 @@ h1 {
 .tocButton {
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 0;
   width: 40px;
   height: 36px;
-  background: #282626 url(/static/images/newbook-toc-btn.gif) no-repeat;
+  background: #282626 url(../images/newbook-toc-btn.gif) no-repeat;
 }
 
 
@@ -99,7 +99,7 @@ div.monelem_controls_contents_container {
 }
 
 ol.monelem_controls_contents_list:before {
-  content: "Table of Contents";
+  content: "İçindekiler";
   font-weight: bold;
   font-size: 16pt;
   padding-left: 16px;
